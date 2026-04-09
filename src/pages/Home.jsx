@@ -34,9 +34,9 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(11,18,32,0.84) 0%, rgba(17,28,51,0.72) 40%, rgba(11,18,32,0.9) 100%)' }} />
 
         <div className="relative z-10 text-center px-6 max-w-[820px]">
-          <img src="/logo.png" alt="Gözleme King" className="w-[clamp(110px,16vw,160px)] h-auto mx-auto mb-7" style={{ ...anim(0.1), filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.5))' }} />
-          <div className="inline-block px-[18px] py-[7px] border border-gold/35 rounded-[2px] mb-7 text-[11px] tracking-[3.5px] uppercase text-gold font-medium" style={anim(0.3)}>
-            Authentic Turkish Street Food · Est. 2003
+          <img src="/logo.png" alt="Gözleme King" className="w-[clamp(110px,16vw,160px)] h-auto mx-auto mb-3" style={{ ...anim(0.1), filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.5))' }} />
+          <div className="mb-8 text-[13px] tracking-[6px] uppercase text-gold font-medium" style={anim(0.25)}>
+            Turkish Street Food
           </div>
           <h1 className="font-serif text-[clamp(40px,7vw,76px)] text-white font-semibold leading-[1.08] mb-[22px] tracking-[-0.5px]" style={anim(0.45)}>
             Freshly Made<br /><em className="italic text-gold-light">Gözleme</em>
