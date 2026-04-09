@@ -54,7 +54,7 @@ export default function Navbar() {
             <li key={l.label}>
               <Link
                 to={l.to}
-                className="text-white/[0.78] no-underline text-[13px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                className="text-white/90 no-underline text-[13px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
               >
                 {l.label}
               </Link>
