@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Menu', to: '/menu' },
-  { label: 'Order Online', to: '/locations', highlight: true },
+  { label: 'Order Online', to: '/locations' },
   { label: 'Locations', to: '/locations' },
   { label: 'Catering', to: '/catering' },
   { label: 'Franchise', to: '/franchise' },
@@ -55,7 +55,7 @@ export default function Navbar() {
             <li key={l.label}>
               <Link
                 to={l.to}
-                className={`no-underline text-[12.5px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${l.highlight ? 'text-gold' : 'text-white/90'}`}
+                className="no-underline text-[12.5px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 text-white/90 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
               >
                 {l.label}
               </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
               key={l.label}
               to={l.to}
               onClick={() => setMenuOpen(false)}
-              className={`no-underline font-serif text-[30px] font-medium transition-colors tracking-[1px] hover:text-gold ${l.highlight ? 'text-gold' : 'text-white'}`}
+              className="no-underline font-serif text-[30px] font-medium transition-colors tracking-[1px] text-white hover:text-gold"
             >
               {l.label}
             </Link>
