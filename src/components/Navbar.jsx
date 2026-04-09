@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Menu', to: '/menu' },
+  { label: 'Order Online', to: '/locations', highlight: true },
   { label: 'Locations', to: '/locations' },
   { label: 'Catering', to: '/catering' },
   { label: 'Franchise', to: '/franchise' },
@@ -14,7 +15,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -32,13 +32,14 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-9 py-3 transition-all duration-[450ms]"
+        className="fixed top-0 left-0 right-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-9 py-3 transition-all duration-[450ms]"
         style={{
           background: scrolled ? 'rgba(11,18,32,0.95)' : 'transparent',
           backdropFilter: scrolled ? 'blur(16px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
         }}
       >
+        {/* Logo - left */}
         <Link to="/" onClick={handleLogoClick}>
           <img
             src="/logo.png"
@@ -48,13 +49,13 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex gap-7 list-none items-center">
+        {/* Nav links - centered */}
+        <ul className="hidden lg:flex gap-6 list-none items-center justify-center">
           {NAV_LINKS.map((l) => (
             <li key={l.label}>
               <Link
                 to={l.to}
-                className="text-white/90 no-underline text-[13px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                className={`no-underline text-[12.5px] font-medium tracking-[1.2px] uppercase relative pb-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${l.highlight ? 'text-gold' : 'text-white/90'}`}
               >
                 {l.label}
               </Link>
@@ -62,24 +63,18 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="https://www.gozlemeking.com.au/location"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden md:inline-block bg-transparent text-gold border-[1.5px] border-gold px-[22px] py-[9px] rounded-[3px] font-semibold text-xs tracking-[1.5px] uppercase cursor-pointer transition-all duration-300 hover:bg-gold hover:text-navy-darkest no-underline"
-        >
-          Order Online
-        </a>
-
-        {/* Hamburger */}
+        {/* Hamburger - right */}
         <button
-          className="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
+          className="flex lg:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 ml-auto"
           onClick={() => setMenuOpen(true)}
         >
           <span className="w-[22px] h-[1.5px] bg-white block" />
           <span className="w-[22px] h-[1.5px] bg-white block" />
           <span className="w-[22px] h-[1.5px] bg-white block" />
         </button>
+
+        {/* Empty div to balance grid on desktop */}
+        <div className="hidden lg:block" />
       </nav>
 
       {/* Mobile menu */}
@@ -97,7 +92,7 @@ export default function Navbar() {
               key={l.label}
               to={l.to}
               onClick={() => setMenuOpen(false)}
-              className="text-white no-underline font-serif text-[30px] font-medium transition-colors tracking-[1px] hover:text-gold"
+              className={`no-underline font-serif text-[30px] font-medium transition-colors tracking-[1px] hover:text-gold ${l.highlight ? 'text-gold' : 'text-white'}`}
             >
               {l.label}
             </Link>
