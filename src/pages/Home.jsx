@@ -34,10 +34,7 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(11,18,32,0.84) 0%, rgba(17,28,51,0.72) 40%, rgba(11,18,32,0.9) 100%)' }} />
 
         <div className="relative z-10 text-center px-6 max-w-[820px]">
-          <img src="/logo.png" alt="Gözleme King" className="w-[clamp(110px,16vw,160px)] h-auto mx-auto mb-3" style={{ ...anim(0.1), filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.5))' }} />
-          <div className="mb-8 text-[13px] tracking-[6px] uppercase text-gold font-medium" style={anim(0.25)}>
-            Turkish Street Food
-          </div>
+          <img src="/logo-tagline.svg" alt="Gözleme King - Turkish Street Food" className="w-[clamp(140px,22vw,220px)] h-auto mx-auto mb-8" style={{ ...anim(0.1), filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.5))' }} />
           <h1 className="font-serif text-[clamp(40px,7vw,76px)] text-white font-semibold leading-[1.08] mb-[22px] tracking-[-0.5px]" style={anim(0.45)}>
             Freshly Made<br /><em className="italic text-gold-light">Gözleme</em>
           </h1>
