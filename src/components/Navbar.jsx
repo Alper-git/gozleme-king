@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
@@ -13,12 +13,21 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
@@ -30,7 +39,7 @@ export default function Navbar() {
           borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
         }}
       >
-        <Link to="/">
+        <Link to="/" onClick={handleLogoClick}>
           <img
             src="/logo.png"
             alt="Gözleme King"
