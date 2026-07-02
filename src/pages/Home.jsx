@@ -6,13 +6,6 @@ import { PHILOSOPHY, LOCATIONS } from '../data'
 
 const HERO_BG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/Gozleme-4762-682ad656-1920w.jpg'
 
-const MENU_HIGHLIGHTS = [
-  { name: 'Classic Gözleme', desc: 'Spinach & feta, chicken, lamb — our signature Turkish flatbreads filled with fresh ingredients.', tag: 'Signature' },
-  { name: 'Künefe', desc: 'Heavenly cheese-filled shredded pastry soaked in sweet syrup and topped with pistachios.', tag: 'Dessert' },
-  { name: 'Turkish Delight', desc: 'Imported straight from Turkey\'s Grand Bazaar — the highest quality lokum available.', tag: 'Sweets' },
-  { name: 'Catering Packages', desc: 'Custom gözleme platters perfect for offices, events, parties, and celebrations of any size.', tag: 'Catering' },
-]
-
 export default function Home() {
   const [heroIn, setHeroIn] = useState(false)
 
@@ -68,14 +61,17 @@ export default function Home() {
               Since 2003, we have been bringing authentic Turkish street food to Sydney — from weekend market stalls to nine shopping centre locations.
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+          <div className="mt-14 max-w-[880px] mx-auto text-left">
             {PHILOSOPHY.map((p, i) => (
-              <Reveal key={p.title} delay={0.1 + i * 0.1}>
-                <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.07] rounded-lg p-8 px-6 transition-all duration-400 hover:bg-white/[0.06] hover:-translate-y-[3px] relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                  <span className="text-[28px] mb-[18px] block">{p.icon}</span>
-                  <h3 className="font-serif text-xl font-semibold mb-2.5">{p.title}</h3>
-                  <p className="text-[13.5px] leading-[1.7] opacity-50">{p.desc}</p>
+              <Reveal key={p.title} delay={0.08 + i * 0.08}>
+                <div className={`grid grid-cols-[70px_1fr] md:grid-cols-[130px_1fr] gap-5 md:gap-8 items-start py-9 ${i < PHILOSOPHY.length - 1 ? 'border-b border-white/[0.08]' : ''} group`}>
+                  <span className="font-serif text-[40px] md:text-[58px] font-semibold leading-none text-gold/50 transition-colors duration-500 group-hover:text-gold">
+                    0{i + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-serif text-[22px] md:text-2xl font-semibold mb-2.5">{p.title}</h3>
+                    <p className="text-[14.5px] leading-[1.8] opacity-55 max-w-[560px]">{p.desc}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -94,13 +90,39 @@ export default function Home() {
               From our signature gözleme to heavenly Turkish desserts — every item is crafted with care.
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-14">
-            {MENU_HIGHLIGHTS.map((m, i) => (
+          {/* Featured: Künefe spotlight */}
+          <Reveal delay={0.15}>
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-14 rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] text-left">
+              <div
+                className="min-h-[300px] md:min-h-[440px] bg-cover bg-center"
+                style={{ backgroundImage: "url('https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/iv66uhbxo5421-b59ab0b9-1920w.jpg')" }}
+              />
+              <div className="bg-navy-deep text-white p-10 md:p-14 flex flex-col justify-center">
+                <span className="text-[11px] tracking-[3.5px] uppercase text-gold font-semibold mb-4">Meet Our Most Wanted Dessert</span>
+                <h3 className="font-serif text-[clamp(28px,3.5vw,42px)] font-semibold leading-[1.1] mb-5">Künefe</h3>
+                <p className="text-[15px] leading-[1.85] text-white/55 mb-4">
+                  A heavenly Turkish dessert made with cheese and shredded kadayif dough, soaked in sweet syrup and topped with pistachios. Its perfectly balanced combination of cheese and sugar means it never feels heavy — you might even go for round two.
+                </p>
+                <p className="text-[13px] tracking-[1px] uppercase text-teal-light font-semibold">
+                  🍃 Vegan künefe available at all shops
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Minimal highlights strip */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-16 text-left divide-y md:divide-y-0 md:divide-x divide-navy/10">
+            {[
+              { name: 'Classic Gözleme', tag: 'Signature', desc: 'Spinach & feta, chicken, lamb — hand-rolled flatbreads filled fresh to order.' },
+              { name: 'Turkish Delight', tag: 'Grand Bazaar', desc: 'Imported straight from Turkey — the highest quality lokum available.' },
+              { name: 'Catering Packages', tag: 'Events', desc: 'Custom gözleme platters for offices, events and celebrations of any size.' },
+            ].map((m, i) => (
               <Reveal key={m.name} delay={0.1 + i * 0.08}>
-                <div className="bg-white rounded-lg p-8 px-7 text-left border border-black/[0.05] transition-all duration-400 hover:-translate-y-[3px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] relative overflow-hidden group">
-                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-navy to-teal scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-400" />
-                  <span className="inline-block px-2.5 py-[3px] bg-navy-deep text-gold text-[10px] tracking-[1.5px] uppercase font-semibold rounded-[2px] mb-3.5">{m.tag}</span>
-                  <h3 className="font-serif text-2xl font-semibold mb-2 text-navy-deep">{m.name}</h3>
+                <div className="px-2 md:px-8 py-7 group">
+                  <span className="text-[10px] tracking-[2px] uppercase text-teal font-semibold">{m.tag}</span>
+                  <h3 className="font-serif text-[22px] font-semibold mt-2 mb-2 text-navy-deep relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-400 group-hover:after:w-full">
+                    {m.name}
+                  </h3>
                   <p className="text-sm leading-[1.7] text-[#777]">{m.desc}</p>
                 </div>
               </Reveal>

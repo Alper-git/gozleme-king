@@ -11,6 +11,38 @@ const NAV_LINKS = [
   { label: 'Franchise', to: '/franchise' },
 ]
 
+const SOCIALS = [
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com/gozlemeking/',
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+        <circle cx="12" cy="12" r="4.2" />
+        <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: 'https://facebook.com/gozlemeking',
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.5v7h3z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@gozlemekingofficial',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16.6 3c.4 2.1 1.9 3.7 4 4v3c-1.5 0-2.9-.5-4-1.3v6.6c0 3.4-2.7 6.1-6.1 6.1S4.4 18.7 4.4 15.3s2.7-6.1 6.1-6.1c.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.7 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3V3h3.1z" />
+      </svg>
+    ),
+  },
+]
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -63,18 +95,31 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger - right */}
+        {/* Socials - right */}
+        <div className="hidden lg:flex items-center gap-4 justify-end">
+          {SOCIALS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={s.label}
+              className="text-white/70 transition-all duration-300 hover:text-gold hover:-translate-y-[1px]"
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Hamburger - right (mobile) */}
         <button
-          className="flex lg:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 ml-auto"
+          className="flex lg:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1 ml-auto col-start-3"
           onClick={() => setMenuOpen(true)}
         >
           <span className="w-[22px] h-[1.5px] bg-white block" />
           <span className="w-[22px] h-[1.5px] bg-white block" />
           <span className="w-[22px] h-[1.5px] bg-white block" />
         </button>
-
-        {/* Empty div to balance grid on desktop */}
-        <div className="hidden lg:block" />
       </nav>
 
       {/* Mobile menu */}
@@ -97,6 +142,20 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <div className="flex items-center gap-6 mt-4">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="text-white/60 transition-colors hover:text-gold"
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </>
