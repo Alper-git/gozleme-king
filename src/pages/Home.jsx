@@ -50,6 +50,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats band */}
+      <section className="bg-navy-darkest text-white py-14 px-10 border-y border-white/[0.04]">
+        <div className="max-w-[1000px] mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08] text-center">
+          {[
+            { num: '20+', label: 'Years of Tradition' },
+            { num: '9', label: 'Sydney Locations' },
+            { num: '100%', label: 'Made Fresh Daily' },
+          ].map((s, i) => (
+            <Reveal key={s.label} delay={0.1 + i * 0.1}>
+              <div className="py-6 sm:py-2">
+                <div className="font-serif text-[46px] font-semibold text-gold leading-none mb-2.5">{s.num}</div>
+                <div className="text-[11px] tracking-[2.5px] uppercase text-white/50">{s.label}</div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Philosophy */}
       <section className="py-[100px] px-10 bg-navy text-white text-center relative overflow-hidden">
         <div className="max-w-[1120px] mx-auto relative">
@@ -149,16 +167,18 @@ export default function Home() {
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
             {LOCATIONS.map((l, i) => (
-              <Reveal key={l.name} delay={0.05 + i * 0.04}>
-                <div className="bg-white/[0.03] border border-white/[0.06] rounded-md p-6 px-[22px] text-left transition-all duration-300 hover:bg-white/[0.06] hover:border-gold/35">
+              <Reveal key={l.name} delay={0.05 + i * 0.04} className="h-full">
+                <div className="h-full flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-md p-6 px-[22px] text-left transition-all duration-300 hover:bg-white/[0.06] hover:border-gold/35">
                   <h3 className="font-serif text-[19px] font-semibold mb-1.5 text-gold-light">{l.name}</h3>
                   <p className="text-[13px] opacity-50 mb-1 leading-[1.5]">{l.address}</p>
                   <p className="text-[12px] opacity-35 mb-2.5">{l.hours}</p>
-                  <span className="text-[13px] font-semibold text-teal-light">{l.phone}</span>
-                  <br />
-                  <a href={l.uber} target="_blank" rel="noreferrer" className="inline-block mt-2.5 text-[11px] tracking-[1px] uppercase font-semibold text-gold no-underline pb-[2px] border-b border-gold/35 transition-all hover:border-gold">
-                    Order on Uber Eats →
-                  </a>
+                  <div className="mt-auto pt-1.5">
+                    <span className="text-[13px] font-semibold text-teal-light">{l.phone}</span>
+                    <br />
+                    <a href={l.uber} target="_blank" rel="noreferrer" className="inline-block mt-2.5 text-[11px] tracking-[1px] uppercase font-semibold text-gold no-underline pb-[2px] border-b border-gold/35 transition-all hover:border-gold">
+                      Order on Uber Eats →
+                    </a>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -169,6 +189,30 @@ export default function Home() {
             </Link>
           </Reveal>
         </div>
+      </section>
+
+      {/* Instagram band */}
+      <section className="bg-navy-darkest text-white py-20 overflow-hidden relative border-b border-white/[0.04]">
+        <div className="marquee-wrap select-none pointer-events-none mb-12" aria-hidden="true">
+          <div className="marquee-track font-serif text-[clamp(44px,8vw,88px)] font-semibold uppercase tracking-[2px] leading-none">
+            <span className="marquee-text">Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;</span>
+            <span className="marquee-text">Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;Too Good To Share&nbsp;·&nbsp;</span>
+          </div>
+        </div>
+        <Reveal>
+          <div className="text-center px-10 relative">
+            <span className="block text-[11px] tracking-[3.5px] uppercase text-gold font-semibold mb-4">Follow Along</span>
+            <a
+              href="https://instagram.com/gozlemeking/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-serif text-[clamp(28px,4vw,44px)] font-semibold text-white no-underline transition-colors duration-300 hover:text-gold"
+            >
+              @gozlemeking
+            </a>
+            <p className="text-[14px] text-white/40 mt-3">Fresh from the grill, straight to your feed — see what's cooking on Instagram.</p>
+          </div>
+        </Reveal>
       </section>
 
       {/* Catering CTA */}

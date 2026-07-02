@@ -17,39 +17,44 @@ export const PHILOSOPHY = [
   { icon: '⭐', title: 'Customer First', desc: 'Your satisfaction drives everything we do. We constantly evolve based on your feedback.' },
 ]
 
-export const MENU_CATEGORIES = [
+export const MENU_SECTIONS = [
   {
-    category: 'Gözleme',
+    id: 'gozleme',
+    label: 'Gözleme',
+    heading: 'Our Signature Gözleme',
+    intro: 'Hand-rolled fresh every morning and filled to order, right before your eyes.',
     items: [
-      { name: 'Spinach & Feta', desc: 'Traditional Turkish flatbread filled with fresh spinach and crumbly feta cheese' },
+      { name: 'Spinach & Feta', desc: 'Fresh spinach and crumbly feta cheese folded into golden hand-rolled dough', badges: ['V'] },
+      { name: 'Cheese', desc: 'A blend of premium cheeses melted inside crispy flatbread', badges: ['V'] },
       { name: 'Chicken', desc: 'Seasoned chicken with fresh vegetables wrapped in hand-rolled dough' },
-      { name: 'Lamb', desc: 'Slow-cooked lamb with herbs and spices in a crispy flatbread' },
-      { name: 'Cheese', desc: 'A blend of premium cheeses melted inside golden, hand-rolled dough' },
-      { name: 'Mushroom', desc: 'Fresh mushrooms with herbs and cheese in a crispy gözleme' },
-      { name: 'Potato', desc: 'Seasoned potato filling with herbs wrapped in traditional flatbread' },
+      { name: 'Lamb', desc: 'Slow-cooked seasoned lamb with herbs and spices' },
+      { name: 'Mushroom', desc: 'Fresh mushrooms with herbs and melted cheese', badges: ['V'] },
+      { name: 'Potato', desc: 'Seasoned potato filling with herbs and spices', badges: ['V'] },
     ],
   },
   {
-    category: 'Desserts',
+    id: 'desserts',
+    label: 'Desserts & Sweets',
+    heading: 'Sweet Endings',
+    intro: 'Traditional Turkish desserts made the way they have been for generations.',
     items: [
-      { name: 'Künefe', desc: 'Heavenly cheese-filled shredded kadayif dough soaked in sweet syrup, topped with pistachios' },
-      { name: 'Nutella Gözleme', desc: 'Warm hand-rolled dough filled with melted Nutella, a sweet twist on the classic' },
+      { name: 'Künefe', desc: 'Cheese-filled shredded kadayif dough soaked in sweet syrup, topped with pistachios', badges: ['Vegan available'], featured: true },
+      { name: 'Nutella Gözleme', desc: 'Warm hand-rolled dough filled with melted Nutella — a sweet twist on the classic' },
       { name: 'Baklava', desc: 'Layers of filo pastry with chopped nuts, held together with honey syrup' },
+      { name: 'Nutella Baklava', desc: 'Our signature baklava taken to the next level with rich Nutella' },
+      { name: 'Tres Leches Cake', desc: 'Sponge cake soaked in three kinds of milk: evaporated, condensed and cream' },
+      { name: 'Turkish Delight', desc: "Imported straight from Turkey's Grand Bazaar — the highest quality lokum" },
     ],
   },
   {
-    category: 'Drinks',
+    id: 'drinks',
+    label: 'Drinks',
+    heading: 'Beverages',
+    intro: 'The traditional way to finish — or start — any Turkish meal.',
     items: [
-      { name: 'Turkish Tea', desc: 'Traditional black tea served in a classic tulip glass' },
-      { name: 'Ayran', desc: 'Refreshing Turkish yoghurt drink, perfect alongside any gözleme' },
-      { name: 'Soft Drinks', desc: 'A selection of chilled soft drinks and bottled water' },
-    ],
-  },
-  {
-    category: 'Sweets',
-    items: [
-      { name: 'Turkish Delight', desc: 'Imported straight from Turkey\'s Grand Bazaar, the highest quality lokum' },
-      { name: 'Vegan Künefe', desc: 'Our signature künefe made with plant-based ingredients, available at all locations' },
+      { name: 'Turkish Tea', desc: 'Traditional black tea, served in a classic tulip glass' },
+      { name: 'Ayran', desc: 'Refreshing Turkish yoghurt drink — the perfect match for any gözleme' },
+      { name: 'Soft Drinks & Water', desc: 'A selection of chilled soft drinks and bottled water' },
     ],
   },
 ]

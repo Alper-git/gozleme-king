@@ -39,3 +39,22 @@ html {
   0%, 100% { opacity: 0.25; }
   50% { opacity: 0.5; }
 }
+
+/* Marquee */
+.marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+}
+.marquee-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201, 168, 76, 0.3);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
