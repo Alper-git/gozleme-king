@@ -3,10 +3,10 @@ import Reveal from '../components/Reveal'
 import StarDivider from '../components/StarDivider'
 
 const BENEFITS = [
-  { icon: '📈', title: 'Proven Model', desc: 'Over 20 years of experience and a proven business model with nine successful locations across Sydney.' },
-  { icon: '🎓', title: 'Full Training', desc: 'Comprehensive training program covering food preparation, operations, customer service, and business management.' },
-  { icon: '🤝', title: 'Ongoing Support', desc: 'Continuous support from our experienced team including marketing, supply chain, and operational guidance.' },
-  { icon: '🏪', title: 'Site Selection', desc: 'Assistance with finding the right location in high-traffic shopping centres and busy high streets.' },
+  { title: 'Proven Model', desc: 'Over 20 years of experience and a proven business model with nine successful locations across Sydney.' },
+  { title: 'Full Training', desc: 'Comprehensive training program covering food preparation, operations, customer service, and business management.' },
+  { title: 'Ongoing Support', desc: 'Continuous support from our experienced team including marketing, supply chain, and operational guidance.' },
+  { title: 'Site Selection', desc: 'Assistance with finding the right location in high-traffic shopping centres and busy high streets.' },
 ]
 
 export default function Franchise() {
@@ -36,23 +36,59 @@ export default function Franchise() {
       </section>
 
       {/* Benefits */}
-      <section className="py-[100px] px-10 bg-cream text-center">
-        <div className="max-w-[1120px] mx-auto">
+      <section className="py-[100px] px-10 bg-cream">
+        <div className="max-w-[1120px] mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-14 lg:gap-20 items-start">
+          {/* Storefront image */}
           <Reveal>
-            <span className="block text-[11px] tracking-[3.5px] uppercase text-teal font-semibold mb-3.5">Why Franchise</span>
-            <h2 className="font-serif text-[clamp(30px,4vw,46px)] font-semibold leading-[1.15] mb-[18px] text-navy-deep">What We Offer</h2>
-            <StarDivider color="#1a2744" />
+            <div className="lg:sticky lg:top-[120px]">
+              <div className="rounded-xl overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
+                <img
+                  src="/store.jpg"
+                  alt="A Gözleme King store inside a Sydney shopping centre"
+                  className="w-full h-[340px] lg:h-[440px] object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-3 mt-6 divide-x divide-navy/10 text-center">
+                {[
+                  { num: '20+', label: 'Years' },
+                  { num: '9', label: 'Locations' },
+                  { num: '2003', label: 'Established' },
+                ].map((s) => (
+                  <div key={s.label} className="px-2">
+                    <div className="font-serif text-[28px] font-semibold text-navy-deep leading-none mb-1">{s.num}</div>
+                    <div className="text-[10px] tracking-[2px] uppercase text-navy/40">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-            {BENEFITS.map((b, i) => (
-              <Reveal key={b.title} delay={0.1 + i * 0.1}>
-                <div className="bg-white rounded-lg p-8 px-6 border border-black/[0.05] transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
-                  <span className="text-[28px] mb-[18px] block">{b.icon}</span>
-                  <h3 className="font-serif text-xl font-semibold mb-2.5 text-navy-deep">{b.title}</h3>
-                  <p className="text-[13.5px] leading-[1.7] text-[#777]">{b.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+
+          {/* Benefits list */}
+          <div>
+            <Reveal>
+              <span className="block text-[11px] tracking-[3.5px] uppercase text-teal font-semibold mb-3.5">Why Franchise</span>
+              <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-semibold leading-[1.12] text-navy-deep mb-4">What We Offer</h2>
+              <p className="text-[15px] leading-[1.8] text-[#777] max-w-[440px] mb-4">
+                A proven concept, a loved brand, and a team that has done this nine times over — here is what you get when you join Gözleme King.
+              </p>
+            </Reveal>
+            <div>
+              {BENEFITS.map((b, i) => (
+                <Reveal key={b.title} delay={0.08 + i * 0.07}>
+                  <div className={`group flex gap-6 py-8 ${i < BENEFITS.length - 1 ? 'border-b border-navy/10' : ''}`}>
+                    <svg width="15" height="15" viewBox="0 0 20 20" className="fill-gold mt-[7px] shrink-0 transition-transform duration-400 group-hover:rotate-[72deg]">
+                      <polygon points="10,0 12.4,7.6 20,7.6 13.8,12.4 16.2,20 10,15.2 3.8,20 6.2,12.4 0,7.6 7.6,7.6" />
+                    </svg>
+                    <div>
+                      <h3 className="font-serif text-[24px] font-semibold text-navy-deep mb-2 relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-400 group-hover:after:w-full">
+                        {b.title}
+                      </h3>
+                      <p className="text-[14.5px] leading-[1.8] text-[#777] max-w-[440px]">{b.desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

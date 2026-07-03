@@ -20,13 +20,13 @@ export default function Locations() {
         <div className="max-w-[1120px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {LOCATIONS.map((l, i) => (
-              <Reveal key={l.name} delay={0.05 + i * 0.04}>
-                <div className="bg-white rounded-lg p-8 border border-black/[0.05] transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
+              <Reveal key={l.name} delay={0.05 + i * 0.04} className="h-full">
+                <div className="h-full flex flex-col bg-white rounded-lg p-8 border border-black/[0.05] transition-all duration-300 hover:-translate-y-[3px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)]">
                   <h3 className="font-serif text-2xl font-semibold mb-3 text-navy-deep">{l.name}</h3>
                   <p className="text-sm text-[#666] mb-2 leading-[1.6]">{l.address}</p>
                   <p className="text-xs text-[#999] mb-4 leading-[1.6]">{l.hours}</p>
 
-                  <div className="flex flex-col gap-2">
+                  <div className="mt-auto flex flex-col gap-2">
                     <a href={`tel:${l.phone}`} className="text-sm font-semibold text-teal no-underline hover:text-teal-light transition-colors">
                       {l.phone}
                     </a>

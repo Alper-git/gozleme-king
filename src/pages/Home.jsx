@@ -111,17 +111,24 @@ export default function Home() {
           {/* Signature highlights — 2x2 feature panels */}
           <div className="grid grid-cols-1 sm:grid-cols-2 mt-16 text-left border border-navy/10 rounded-xl overflow-hidden bg-white/40">
             {[
-              { name: 'Classic Gözleme', tag: 'Our signature', desc: 'Spinach & feta, chicken, lamb — hand-rolled flatbreads filled fresh to order, right before your eyes.', to: '/menu', cta: 'See on the menu' },
-              { name: 'Künefe', tag: 'Most wanted dessert', desc: 'Cheese-filled kadayif soaked in sweet syrup, topped with pistachios. Vegan available at all shops.', to: '/menu', cta: 'See on the menu' },
-              { name: 'Turkish Delight', tag: 'From the Grand Bazaar', desc: 'Imported straight from Turkey — the highest quality lokum available.', to: '/menu', cta: 'See on the menu' },
-              { name: 'Catering Packages', tag: 'For your events', desc: 'Custom gözleme platters for offices, events and celebrations of any size.', to: '/catering', cta: 'Explore catering' },
+              { name: 'Classic Gözleme', tag: 'Signature', desc: 'Spinach & feta, chicken, lamb — hand-rolled flatbreads filled fresh to order, right before your eyes.', to: '/menu', cta: 'See on the menu' },
+              { name: 'Künefe', tag: 'Most Wanted', desc: 'Cheese-filled kadayif soaked in sweet syrup, topped with pistachios. Vegan available at all shops.', to: '/menu', cta: 'See on the menu' },
+              { name: 'Turkish Delight', tag: 'Grand Bazaar', desc: 'Imported straight from Turkey — the highest quality lokum available.', to: '/menu', cta: 'See on the menu' },
+              { name: 'Catering Packages', tag: 'For Events', desc: 'Custom gözleme platters for offices, events and celebrations of any size.', to: '/catering', cta: 'Explore catering' },
             ].map((m, i) => (
               <Reveal key={m.name} delay={0.08 + i * 0.07} className={`h-full ${i < 2 ? 'border-b border-navy/10' : ''} ${i % 2 === 0 ? 'sm:border-r sm:border-navy/10' : ''}`}>
                 <Link to={m.to} className="relative block h-full px-8 py-10 md:px-10 no-underline group overflow-hidden">
                   {/* sliding fill */}
                   <span className="absolute inset-0 bg-navy-deep translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                  <div className="relative">
-                    <span className="font-serif italic text-[17px] text-gold/90 transition-colors duration-400 group-hover:text-gold-light">
+                  {/* vertical editorial tag */}
+                  <span
+                    className="hidden md:flex absolute left-6 top-10 bottom-10 items-start text-[10px] tracking-[3px] uppercase font-semibold text-[#a2823c] transition-colors duration-400 group-hover:text-gold-light select-none"
+                    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  >
+                    {m.tag}
+                  </span>
+                  <div className="relative md:pl-9">
+                    <span className="md:hidden block text-[10.5px] tracking-[2.5px] uppercase font-semibold text-[#a2823c] transition-colors duration-400 group-hover:text-gold-light mb-1">
                       {m.tag}
                     </span>
                     <h3 className="font-serif text-[27px] md:text-[30px] font-semibold mt-3 mb-3 text-navy-deep transition-colors duration-400 group-hover:text-white relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-400 group-hover:after:w-full">
