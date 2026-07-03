@@ -21,39 +21,118 @@ export const MENU_SECTIONS = [
   {
     id: 'gozleme',
     label: 'Gözleme',
-    heading: 'Our Signature Gözleme',
-    intro: 'Hand-rolled fresh every morning and filled to order, right before your eyes.',
+    heading: 'Our Gözleme',
+    intro: 'Hand-rolled fresh every morning and filled to order, right before your eyes. Add your favourite dip — mint yogurt, guacamole or peri mayo.',
+    groups: [
+      {
+        title: 'Breakfast All Day',
+        items: [
+          { name: 'Zaatar & Feta', desc: 'Mix of herbs and feta cheese', badges: ['V'] },
+          { name: 'Sucuk', desc: 'Turkish sausage, feta cheese and egg' },
+          { name: 'Feta, Mushroom & Egg', desc: 'A classic breakfast trio folded into hand-rolled dough' },
+          { name: 'The Big Breakfast', desc: 'Feta cheese, mushroom and egg gözleme with a side of fresh avocado, tomatoes, cucumbers and Kalamata olives' },
+        ],
+      },
+      {
+        title: 'Vegetarian',
+        items: [
+          { name: 'Classic Cheese', desc: 'Our special cheese blend', badges: ['V'] },
+          { name: 'Feta & Spinach', desc: 'Feta cheese and English spinach', badges: ['V'] },
+          { name: 'Vegetarian', desc: 'Feta cheese, English spinach and mushroom', badges: ['V'] },
+          { name: 'Marinated Chilli Potato', desc: 'Feta cheese and chilli marinated potato', badges: ['V', 'Spicy'] },
+          { name: 'Veggie Plus', desc: 'Feta cheese, English spinach, mushroom, capsicum and Kalamata olives', badges: ['V'] },
+          { name: 'Hot & Spicy Veggie', desc: 'Feta cheese, English spinach, corn, jalapeños, mushroom, capsicum, Spanish onion and Kalamata olives', badges: ['V', 'Spicy'] },
+        ],
+      },
+      {
+        title: 'Beef',
+        items: [
+          { name: 'Combination', desc: 'Feta cheese, English spinach and traditional beef' },
+          { name: 'Mojo Beef', desc: "Feta cheese, English spinach, beef infused with our secret 'Mojo' sauce" },
+          { name: 'The Lot', desc: 'Feta cheese, English spinach, beef and mushroom' },
+          { name: 'The Bull Fighter', desc: 'Feta cheese, English spinach, beef chorizo (sucuk), Spanish onion and capsicum infused with special Spanish sauce' },
+        ],
+      },
+      {
+        title: 'Chicken',
+        items: [
+          { name: 'Mojo Chicken', desc: "Feta cheese, English spinach, chicken breast infused with our secret 'Mojo' sauce" },
+          { name: 'Peri Peri Chicken', desc: 'Feta cheese, English spinach, Peri-Peri chicken and a side of peri mayo', badges: ['Spicy'] },
+          { name: 'Chicken & Mushroom', desc: 'Cheese, seasoned chicken and mushroom' },
+          { name: 'Tandoori Chicken', desc: 'Feta cheese, English spinach, Spanish onion, tandoori chicken and a side of mint yogurt' },
+        ],
+      },
+      {
+        title: 'Signature',
+        items: [
+          { name: 'Gourmet Lamb', desc: 'Feta cheese, English spinach, marinated lamb and a side of mint yogurt' },
+          { name: 'BBQ Meat Lovers', desc: 'Feta cheese, beef, chicken and sucuk infused with BBQ sauce' },
+          { name: 'Mucho Mexicana', desc: 'Feta cheese, English spinach, beef or chicken, corn kernels, jalapeños and a side of guacamole', badges: ['Spicy'] },
+        ],
+      },
+      {
+        title: 'Dessert Gözlemes',
+        items: [
+          { name: 'Banana Buzz', desc: 'Caramelised banana, warm honey, topped with icing sugar' },
+          { name: 'Nutella Dream', desc: 'Filled with Nutella, topped with icing sugar' },
+          { name: 'Biscoff', desc: 'Original Biscoff spread sprinkled with original Biscoff pieces', badges: ['V'] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bowls',
+    label: 'Bowls & Wraps',
+    heading: 'Healthy Bowls & Wraps',
+    intro: 'All ingredients grilled fresh while you wait.',
+    groups: [
+      {
+        title: 'Healthy Bowls',
+        items: [
+          { name: 'Hot & Spicy Veggie Bowl', desc: 'Two eggs, spinach, feta, chilli potato, mushroom, capsicum, corn and jalapeño', badges: ['V', 'Spicy'] },
+          { name: 'Mojo Bowl', desc: 'Choice of minced beef or chicken infused with secret Mojo sauce, spinach, feta, corn and capsicum — topped with tzatziki sauce' },
+          { name: 'Chicken Bowl', desc: 'Grilled chicken, spinach, feta, capsicum and grilled mushroom' },
+          { name: 'Peri Bowl', desc: 'Choice of beef mince or chicken, spinach, feta, mushroom and Spanish onion — topped with peri sauce', badges: ['Spicy'] },
+        ],
+      },
+      {
+        title: 'Gözleme Wraps',
+        note: 'Make it a combo — any wrap with a small coffee or tea.',
+        items: [
+          { name: 'Sucuk Wrap', desc: 'Feta, sucuk and scrambled egg' },
+          { name: 'Veggie Wrap', desc: 'Feta, cucumber, avocado and tomato', badges: ['V'] },
+          { name: 'Spinach Wrap', desc: 'Feta, spinach and scrambled egg', badges: ['V'] },
+          { name: 'Zataar Wrap', desc: 'Feta and zataar (oregano)', badges: ['V'] },
+          { name: 'Egg Wrap', desc: 'Feta and scrambled egg', badges: ['V'] },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'breakfast',
+    label: 'Breakfast',
+    heading: 'Traditional Breakfasts',
+    intro: 'The way breakfast is done in Türkiye — generous, fresh, and always with Turkish tea.',
     items: [
-      { name: 'Spinach & Feta', desc: 'Fresh spinach and crumbly feta cheese folded into golden hand-rolled dough', badges: ['V'] },
-      { name: 'Cheese', desc: 'A blend of premium cheeses melted inside crispy flatbread', badges: ['V'] },
-      { name: 'Chicken', desc: 'Seasoned chicken with fresh vegetables wrapped in hand-rolled dough' },
-      { name: 'Lamb', desc: 'Slow-cooked seasoned lamb with herbs and spices' },
-      { name: 'Mushroom', desc: 'Fresh mushrooms with herbs and melted cheese', badges: ['V'] },
-      { name: 'Potato', desc: 'Seasoned potato filling with herbs and spices', badges: ['V'] },
+      { name: 'Turkish Breakfast', desc: 'Two fried eggs, sucuk, olives, tomato, cucumber, feta, jam & butter and bread — served with Turkish tea' },
+      { name: 'Mediterranean Breakfast', desc: 'Two fried eggs, sucuk, tomato, olives, cucumber, feta and zataar bread — served with Turkish tea' },
+      { name: 'Vegetarian Breakfast', desc: 'Two fried eggs, mushroom, avocado, tomato, olives, cucumber, feta, yogurt and bread — served with Turkish tea', badges: ['V'] },
+      { name: 'Home Made Lentil Soup', desc: 'Traditional Turkish lentil soup, made fresh in store and served hot', badges: ['V'] },
     ],
   },
   {
     id: 'desserts',
-    label: 'Desserts & Sweets',
+    label: 'Desserts & Drinks',
     heading: 'Sweet Endings',
     intro: 'Traditional Turkish desserts made the way they have been for generations.',
     items: [
       { name: 'Künefe', desc: 'Cheese-filled shredded kadayif dough soaked in sweet syrup, topped with pistachios', badges: ['Vegan available'], featured: true },
-      { name: 'Nutella Gözleme', desc: 'Warm hand-rolled dough filled with melted Nutella — a sweet twist on the classic' },
-      { name: 'Baklava', desc: 'Layers of filo pastry with chopped nuts, held together with honey syrup' },
-      { name: 'Nutella Baklava', desc: 'Our signature baklava taken to the next level with rich Nutella' },
-      { name: 'Tres Leches Cake', desc: 'Sponge cake soaked in three kinds of milk: evaporated, condensed and cream' },
       { name: 'Turkish Delight', desc: "Imported straight from Turkey's Grand Bazaar — the highest quality lokum" },
+      { name: 'Cakes by Pasticceria Papa', desc: 'A rotating selection of cakes — see our display case in store' },
     ],
-  },
-  {
-    id: 'drinks',
-    label: 'Drinks',
-    heading: 'Beverages',
-    intro: 'The traditional way to finish — or start — any Turkish meal.',
-    items: [
+    drinks: [
       { name: 'Turkish Tea', desc: 'Traditional black tea, served in a classic tulip glass' },
-      { name: 'Ayran', desc: 'Refreshing Turkish yoghurt drink — the perfect match for any gözleme' },
+      { name: 'GK Espresso Bar', desc: 'Barista-made coffee, available at all locations' },
       { name: 'Soft Drinks & Water', desc: 'A selection of chilled soft drinks and bottled water' },
     ],
   },
