@@ -4,7 +4,6 @@ import StarDivider from '../components/StarDivider'
 import { MENU_SECTIONS } from '../data'
 
 const HERO_BG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/Gozleme-4762-682ad656-1920w.jpg'
-const DESSERT_IMG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/iv66uhbxo5421-b59ab0b9-1920w.jpg'
 
 function Badge({ label, dark }) {
   const spicy = label === 'Spicy'
@@ -76,8 +75,6 @@ export default function Menu() {
   const bowls = MENU_SECTIONS.find((s) => s.id === 'bowls')
   const breakfast = MENU_SECTIONS.find((s) => s.id === 'breakfast')
   const desserts = MENU_SECTIONS.find((s) => s.id === 'desserts')
-  const kunefe = desserts.items.find((i) => i.featured)
-  const otherDesserts = desserts.items.filter((i) => !i.featured)
 
   return (
     <>
@@ -193,20 +190,6 @@ export default function Menu() {
 
       {/* Desserts & Drinks */}
       <section id="desserts" className="bg-navy text-white" style={{ scrollMarginTop: '135px' }}>
-        {/* Künefe feature */}
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="min-h-[300px] md:min-h-[460px] bg-cover bg-center" style={{ backgroundImage: `url('${DESSERT_IMG}')` }} />
-          <div className="p-10 md:p-16 flex flex-col justify-center bg-navy-deep">
-            <Reveal>
-              <span className="text-[11px] tracking-[3.5px] uppercase text-gold font-semibold mb-4 block">Most Wanted Dessert</span>
-              <h2 className="font-serif text-[clamp(30px,4vw,48px)] font-semibold leading-[1.1] mb-5">{kunefe.name}</h2>
-              <p className="text-[15px] leading-[1.85] text-white/55 mb-5">{kunefe.desc}. Its perfectly balanced combination of cheese and sugar means it never feels heavy — you might even go for round two.</p>
-              <p className="text-[12px] tracking-[1.5px] uppercase text-teal-light font-semibold">🍃 Vegan künefe available at all shops</p>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* Other desserts */}
         <div className="py-[90px] px-10">
           <div className="max-w-[1000px] mx-auto">
             <Reveal>
@@ -217,7 +200,7 @@ export default function Menu() {
               </div>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-8">
-              {otherDesserts.map((item, i) => (
+              {desserts.items.map((item, i) => (
                 <Reveal key={item.name} delay={0.05 + i * 0.05}>
                   <MenuItem item={item} dark />
                 </Reveal>
@@ -265,7 +248,7 @@ export default function Menu() {
               View Full Menu (PDF-style)
             </a>
             <a
-              href="/locations"
+              href="/order"
               className="inline-block bg-transparent text-white/80 border border-white/20 px-[34px] py-[13px] rounded-[3px] font-medium text-[13px] tracking-[1.5px] uppercase no-underline transition-all duration-300 hover:border-white/50 hover:text-white hover:bg-white/5"
             >
               Order Online

@@ -31,6 +31,7 @@ export default function Footer() {
           <h4 className="text-white/65 text-[11px] tracking-[2px] uppercase mb-3.5 font-semibold">
             Quick Links
           </h4>
+          <Link to="/order" className="block text-white/35 no-underline text-[13.5px] mb-[9px] transition-colors hover:text-gold">Order Online</Link>
           <Link to="/catering" className="block text-white/35 no-underline text-[13.5px] mb-[9px] transition-colors hover:text-gold">Catering</Link>
           <Link to="/franchise" className="block text-white/35 no-underline text-[13.5px] mb-[9px] transition-colors hover:text-gold">Franchise</Link>
           <a href="https://www.instagram.com/gozlemeking/" target="_blank" rel="noreferrer" className="block text-white/35 no-underline text-[13.5px] mb-[9px] transition-colors hover:text-gold">Instagram</a>

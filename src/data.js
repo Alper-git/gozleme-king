@@ -126,7 +126,7 @@ export const MENU_SECTIONS = [
     heading: 'Sweet Endings',
     intro: 'Traditional Turkish desserts made the way they have been for generations.',
     items: [
-      { name: 'Künefe', desc: 'Cheese-filled shredded kadayif dough soaked in sweet syrup, topped with pistachios', badges: ['Vegan available'], featured: true },
+      { name: 'Künefe', desc: 'Cheese-filled shredded kadayif dough soaked in sweet syrup, topped with pistachios', badges: ['Vegan available'] },
       { name: 'Turkish Delight', desc: "Imported straight from Turkey's Grand Bazaar — the highest quality lokum" },
       { name: 'Cakes by Pasticceria Papa', desc: 'A rotating selection of cakes — see our display case in store' },
     ],
