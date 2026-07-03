@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal'
 import StarDivider from '../components/StarDivider'
 import { PHILOSOPHY } from '../data'
 
-const HERO_BG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/iv66uhbxo5421-b59ab0b9-1920w.jpg'
+const HERO_BG = '/store.jpg'
 const CTA_BG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/Gozleme-4762-682ad656-1920w.jpg'
 
 const TIMELINE = [
@@ -80,9 +80,9 @@ export default function About() {
             <div className="lg:sticky lg:top-[120px]">
               <div className="rounded-xl overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
                 <img
-                  src="/istanbul.webp"
-                  alt="İstanbul, Türkiye — the Süleymaniye Mosque and the Turkish flag"
-                  className="w-full h-[420px] lg:h-[560px] object-cover"
+                  src="/istanbul.jpg"
+                  alt="The Maiden's Tower on the Bosphorus at sunset, İstanbul, Türkiye"
+                  className="w-full h-[420px] lg:h-[540px] object-cover object-center"
                 />
               </div>
               <p className="text-[11px] tracking-[2px] uppercase text-navy/35 mt-4 text-center">İstanbul, Türkiye — where it all begins</p>

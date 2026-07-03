@@ -128,21 +128,33 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Minimal highlights strip */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-16 text-left divide-y md:divide-y-0 md:divide-x divide-navy/10">
+          {/* Highlights — interactive panels */}
+          <div className="grid grid-cols-1 md:grid-cols-3 mt-16 text-left border border-navy/10 rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-navy/10 bg-white/40">
             {[
-              { name: 'Classic Gözleme', tag: 'Signature', desc: 'Spinach & feta, chicken, lamb — hand-rolled flatbreads filled fresh to order.' },
-              { name: 'Turkish Delight', tag: 'Grand Bazaar', desc: 'Imported straight from Turkey — the highest quality lokum available.' },
-              { name: 'Catering Packages', tag: 'Events', desc: 'Custom gözleme platters for offices, events and celebrations of any size.' },
+              { name: 'Classic Gözleme', tag: 'Signature', desc: 'Spinach & feta, chicken, lamb — hand-rolled flatbreads filled fresh to order.', to: '/menu', cta: 'See on the menu' },
+              { name: 'Turkish Delight', tag: 'Grand Bazaar', desc: 'Imported straight from Turkey — the highest quality lokum available.', to: '/menu', cta: 'See on the menu' },
+              { name: 'Catering Packages', tag: 'Events', desc: 'Custom gözleme platters for offices, events and celebrations of any size.', to: '/catering', cta: 'Explore catering' },
             ].map((m, i) => (
-              <Reveal key={m.name} delay={0.1 + i * 0.08}>
-                <div className="px-2 md:px-8 py-7 group">
-                  <span className="text-[10px] tracking-[2px] uppercase text-teal font-semibold">{m.tag}</span>
-                  <h3 className="font-serif text-[22px] font-semibold mt-2 mb-2 text-navy-deep relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-400 group-hover:after:w-full">
-                    {m.name}
-                  </h3>
-                  <p className="text-sm leading-[1.7] text-[#777]">{m.desc}</p>
-                </div>
+              <Reveal key={m.name} delay={0.1 + i * 0.08} className="h-full">
+                <Link to={m.to} className="relative block h-full px-8 py-9 no-underline group overflow-hidden">
+                  {/* sliding fill */}
+                  <span className="absolute inset-0 bg-navy-deep translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <div className="relative">
+                    <span className="text-[10px] tracking-[2px] uppercase font-semibold text-teal transition-colors duration-400 group-hover:text-gold">
+                      {m.tag}
+                    </span>
+                    <h3 className="font-serif text-[23px] font-semibold mt-2.5 mb-2.5 text-navy-deep transition-colors duration-400 group-hover:text-white relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-400 group-hover:after:w-full">
+                      {m.name}
+                    </h3>
+                    <p className="text-sm leading-[1.7] text-[#777] transition-colors duration-400 group-hover:text-white/55 mb-6">
+                      {m.desc}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[11px] tracking-[1.5px] uppercase font-semibold text-gold opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-100">
+                      {m.cta}
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
