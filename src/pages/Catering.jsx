@@ -21,7 +21,7 @@ export default function Catering() {
     <>
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-center justify-center bg-navy-darkest overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/iv66uhbxo5421-b59ab0b9-1920w.jpg')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/catering-hero.jpg')" }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(11,18,32,0.88) 0%, rgba(17,28,51,0.8) 50%, rgba(11,18,32,0.92) 100%)' }} />
         <div className="relative z-10 text-center px-6 max-w-[700px]">
           <span className="block text-[11px] tracking-[3.5px] uppercase text-gold font-semibold mb-3.5">Catering</span>

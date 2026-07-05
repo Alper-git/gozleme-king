@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal'
 import StarDivider from '../components/StarDivider'
 import { MENU_SECTIONS } from '../data'
 
-const HERO_BG = 'https://lirp.cdn-website.com/74d5b5c1/dms3rep/multi/opt/Gozleme-4762-682ad656-1920w.jpg'
+const HERO_BG = '/menu-hero.jpg'
 
 function Badge({ label, dark }) {
   const spicy = label === 'Spicy'

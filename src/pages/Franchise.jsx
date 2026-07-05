@@ -43,8 +43,8 @@ export default function Franchise() {
             <div className="lg:sticky lg:top-[120px]">
               <div className="rounded-xl overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
                 <img
-                  src="/store.jpg"
-                  alt="A Gözleme King store inside a Sydney shopping centre"
+                  src="/franchise-photo.jpg"
+                  alt="Inside a Gözleme King store — coffee bar, fresh gözleme and Turkish plates on the wall"
                   className="w-full h-[340px] lg:h-[440px] object-cover"
                 />
               </div>
